@@ -1,0 +1,160 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: white;
+}
+
+/* Header */
+header {
+    background-color: #082B59;
+    padding: 1rem 2rem;
+    border-bottom: 10px solid #d98555;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 150px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.nav-links a:hover {
+    color: #d98555;
+}
+
+/* Main Content */
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    color: #000;
+    margin-bottom: 2rem;
+}
+
+/* Product Grid */
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'espresso espresso text-columbian text-columbian coffee-beans coffee-beans'
+        'text-triple text-triple pouring pouring text-lightly text-lightly';
+    gap: 12px;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.grid-container img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.grid-container .product {
+    text-align: left;
+    padding: 20px;
+}
+
+.item1 { grid-area: espresso; }
+.item2 { grid-area: text-columbian; }
+.item3 { grid-area: coffee-beans; }
+.item4 { grid-area: text-triple; }
+.item5 { grid-area: pouring; }
+.item6 { grid-area: text-lightly; }
+
+.product h4 {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 0.5rem;
+}
+
+.product p {
+    font-size: 1rem;
+    color: #000000;
+    line-height: 1.5;
+}
+
+footer {
+    background-color: #082B59; /* Blue box background */
+    color: white;
+    text-align: center;
+    padding: 50px 20px 0; /* Remove bottom padding */
+    position: relative;
+    overflow: hidden; /* Ensure no extra content spills outside */
+}
+
+
+/* Coffee Beans Section */
+.coffee-beans {
+    width: 100%;
+    height: 200px; /* Adjust based on the coffee bean image height */
+    background: url('https://assets.codepen.io/6306176/gulp-bean-bkgd.jpg') repeat-x center;
+    background-size: cover; /* Ensure the beans cover the entire section width */
+    margin: 0; /* No margin to ensure it's flush with the footer */
+}
+
+/* Footer Text and Social Icons */
+footer p,
+footer .social-icons {
+    position: relative; /* Ensure text and icons stay within the footer content */
+    z-index: 1;
+    margin-bottom: 20px; /* Add spacing from the coffee beans */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.social-icons a:hover {
+    color: #d98555;
+}
+
+/* Ensure Footer Content and Beans Separation */
+footer + .coffee-beans {
+    margin-top: -1px; /* Ensure no gap between coffee beans and footer */
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-areas:
+            'espresso'
+            'text-columbian'
+            'coffee-beans'
+            'text-triple'
+            'pouring'
+            'text-lightly';
+    }
+}
